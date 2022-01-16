@@ -1,4 +1,5 @@
 import { alertConstants } from '../_constants';
+import { toast } from 'react-toastify';
 
 export const alertActions = {
     success,
@@ -7,11 +8,13 @@ export const alertActions = {
 };
 
 function success(message) {
-    return { type: alertConstants.SUCCESS, message };
+    return toast.success(message)
+    //return { type: alertConstants.SUCCESS, message };
 }
 
 function error(message) {
-    return { type: alertConstants.ERROR, message };
+    return toast.error(message)
+    //return { type: alertConstants.ERROR, message };
 }
 
 function clear() {
